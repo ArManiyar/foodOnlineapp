@@ -1,0 +1,19 @@
+FOr production purpose:
+
+collectstatic -> looks for static files in app and collect and place into static root we have to run this command to wirk in production -. deals with rpod_n websites
+python manage.py collectstatic : this command is only used while production website. as this look for static files in apps of project and copy and store into the STATIC_ROOT
+
+
+Hiding the sensiivity information before pushing code into github or any task:
+
+pip install python_decouple
+
+in settings.py:
+
+    from decouple import config
+
+    retrive congi parameters:
+
+        SECRET_KEY = config('SECRET_KEY')
+    then create .env file in ROOT dir
+        and then set key:value
