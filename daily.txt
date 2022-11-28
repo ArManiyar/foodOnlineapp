@@ -17,3 +17,5 @@ in settings.py:
         SECRET_KEY = config('SECRET_KEY')
     then create .env file in ROOT dir
         and then set key:value
+
+AbstractBaseUser has the authentication functionality only , it has no actual fields you will supply the fields to use when you subclass.
