@@ -33,7 +33,7 @@ def registerUser(request):
             messages.success(request, 'you account is created successfully')
             return redirect('registerUser')
         else:
-            messages.error(request, 'invalid form')
+            messages.warning(request, 'invalid form data')
     else:    
         form = UserForm()
     context = {'form':form}
