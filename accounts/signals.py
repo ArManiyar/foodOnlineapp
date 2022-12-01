@@ -14,10 +14,6 @@ def Post_save_create_profile_signal(sender, instance, created, **kwargs):
         except:
             # create user profile if not exist
             UserProfile.objects.create(user=instance)
-            
-@receiver(pre_save, sender=User)
-def pre_save_profile(sender, instance, **kwargs):
-    pass
     
 
 # post_save.connect(post_save_create_profile_signal, sender=User)
