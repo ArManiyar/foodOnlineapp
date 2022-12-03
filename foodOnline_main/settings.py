@@ -139,9 +139,16 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# from django.contrib.messages import constants as messages
-# MESSAGE_TAGS = {
-#     messages.ERROR: 'danger',
-#     messages.SUCCESS: 'success',
-    
-# }
+# email config
+
+# EMAIL_HOST = config('EMAIL_HOST')
+# EMAIL_PORT = config('EMAIL_PORT', cast=int)
+# EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+# EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT=587
+EMAIL_HOST_USER='hypertext.assassins.coder@gmail.com'
+EMAIL_HOST_PASSWORD='quxjaaazehxqnqyb'
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'foodOnline Marketplace <hypertext.assassins.coder@gmail.com>'
