@@ -7,6 +7,7 @@ from django.shortcuts import redirect, render
 from .forms import UserForm
 from vendor.forms import VendorForm
 from .models import User, UserProfile
+from vendor.models import Vendor
 
 from .utils import detect_user, send_reset_link
 
@@ -217,5 +218,6 @@ def custDashboard(request):
 @login_required(login_url = 'login')
 @user_passes_test(check_role_vendor)
 def vendorDashboard(request):
-    context = {}
+    vendor = Vendor.objects.get(user=request.user)
+    context = {'vendor': vendor}
     return render(request, 'accounts/vendorDashboard.html', context)
