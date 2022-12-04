@@ -9,7 +9,7 @@ from vendor.forms import VendorForm
 from .models import User, UserProfile
 from vendor.models import Vendor
 
-from .utils import detect_user, send_reset_link
+from .utils import detect_user, send_verification_link
 
 # TODO add into docs
 
@@ -62,7 +62,7 @@ def registerUser(request):
             # send verfication email/link
             mail_subject = 'Please click below link to activate your account'
             mail_template = 'accounts/emails/accounts_veriication_email.html'
-            send_reset_link(request, user, mail_subject, mail_template) 
+            send_verification_link(request, user, mail_subject, mail_template) 
             messages.success(request, 'you account is created successfully')
             return redirect('registerUser')
         else:
@@ -103,7 +103,7 @@ def registerVendor(request):
             # optimized way verfication link by mail
             mail_subject = 'Please click below link to activate your account'
             mail_template = 'accounts/emails/accounts_veriication_email.html'
-            send_reset_link(request, user, mail_subject, mail_template) 
+            send_verification_link(request, user, mail_subject, mail_template) 
             messages.success(request, "Your account has been registered and wait for the approval.")
             return redirect('login')
         else:
@@ -139,7 +139,7 @@ def forgot_password(request):
             # optimized way
             mail_subject = 'Reset Your Password'
             mail_template = 'accounts/emails/reset_password_email.html'
-            send_reset_link(request, user, mail_subject, mail_template)
+            send_verification_link(request, user, mail_subject, mail_template)
             messages.success(request, 'Password reset link is sent to registered email address')
             return redirect('login')
         else:

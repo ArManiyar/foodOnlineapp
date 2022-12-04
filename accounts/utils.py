@@ -48,7 +48,7 @@ def detect_user(user):
     mail.send()
    ''' 
     # optimise the both abovr code
-def send_reset_link(request, user, mail_subject, mail_template):
+def send_verification_link(request, user, mail_subject, mail_template):
     from_email = settings.DEFAULT_FROM_EMAIL
     current_site = get_current_site(request)
     subject = mail_subject
