@@ -69,6 +69,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'accounts.context_processors.get_vendor',
+                'accounts.context_processors.get_google_api',
             ],
         },
     },
@@ -153,3 +154,8 @@ EMAIL_HOST_USER='hypertext.assassins.coder@gmail.com'
 EMAIL_HOST_PASSWORD='quxjaaazehxqnqyb'
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'foodOnline Marketplace <hypertext.assassins.coder@gmail.com>'
+
+
+
+# GOOFGLE API
+GOOGLE_API_KEY = 'AIzaSyCV_wRF_l5w04S8ZcpF7fJF1WlIUBjd0do'
